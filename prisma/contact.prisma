@@ -1,0 +1,28 @@
+model ContactForm {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  email   String
+  subject String
+  message String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_forms")
+}
+
+model ContactLinks {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  github   String?
+  linkedin String?
+  facebook String?
+  phone    String?
+  email    String?
+  address  String?
+  resume   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_links")
+}

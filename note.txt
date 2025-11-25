@@ -1,0 +1,8 @@
+Table
+1. education [ name, institution, passing year, description]
+2. project [title, description, image, link, techs: [string: array], repo link?]
+3. experience [company name,location, position, start date, end date, works:[string: array], techs: [string: array]]
+4. skill [backend: [name of stacks], frontend: [stack], devOps etc ... ] 
+5.coures/certificate [title, institution, year, description, certificate]
+6. contact form Table [name, email, subject, message]
+7. contact links [github, linkedin, facebook, phone, email, address, resume]

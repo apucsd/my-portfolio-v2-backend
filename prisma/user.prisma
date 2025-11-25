@@ -1,0 +1,40 @@
+model User {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String       @unique
+  phoneNumber String?
+  password    String
+  dateOfBirth DateTime
+  role        UserRoleEnum @default(USER)
+
+  status UserStatus @default(ACTIVE)
+
+  bio              String?
+  location         String?
+  stripeCustomerId String? @unique
+
+  isAgreeWithTerms Boolean
+  profile          String?   @default("https://i.pinimg.com/736x/01/4e/f2/014ef2f860e8e56b27d4a3267e0a193a.jpg")
+  otp              String?
+  otpExpiry        DateTime?
+
+  isEmailVerified               Boolean   @default(false)
+  emailVerificationToken        String?
+  emailVerificationTokenExpires DateTime?
+  createdAt                     DateTime  @default(now())
+  updatedAt                     DateTime  @updatedAt
+
+  @@map("users")
+}
+
+enum UserRoleEnum {
+  USER
+  BUSINESS
+  SUPERADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  BLOCKED
+}
