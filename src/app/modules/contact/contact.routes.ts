@@ -34,7 +34,7 @@ router.delete(
 
 // Contact Links Routes
 router.post(
-    '/links',
+    '/   ',
     auth(UserRoleEnum.USER, UserRoleEnum.BUSINESS, UserRoleEnum.SUPERADMIN),
     validateRequest.body(ContactValidations.createContactLinksValidationSchema),
     ContactControllers.createContactLinks
